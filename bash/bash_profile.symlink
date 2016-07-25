@@ -1,0 +1,10 @@
+#
+# ~/.bash_profile
+# Obviously your standard bash profile nothing to see here really
+# unless you want to startx on login
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+# auto start Xorg
+# [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+
