@@ -1,0 +1,8 @@
+#! /bin/bash
+
+
+## needed this for some javafx configuration
+export XDG_DATA_DIRS=/usr/local/share:/usr/share
+
+## classic git glog alias
+alias glog='git log --graph --pretty=oneline --decorate'
