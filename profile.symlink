@@ -1,8 +1,24 @@
 #! /bin/bash
 
+# basic haven-cloud instalation
+export HAVEN_CLOUD="/home/jmeixner/code/haven-cloud"
+source /home/jmeixner/code/haven-cloud/scripts/setup.sh
+export HAVEN_VERSION=dev
+
 
 ## needed this for some javafx configuration
 export XDG_DATA_DIRS=/usr/local/share:/usr/share
 
 ## classic git glog alias
 alias glog='git log --graph --pretty=oneline --decorate'
+
+
+# I don't winowed emacs so much
+alias emacs='emacs -nw'
+
+#path manipulation for ruby
+export PATH=$PATH:/home/jmeixner/.gem/ruby/2.3.0/bin
+
+#path manipulation for go
+export GOPATH=~/goCode
+export PATH=$PATH:~/go/bin
