@@ -1,9 +1,10 @@
-#! /bin/bash
+#!/bin/bash
 
 # basic haven-cloud instalation
-export HAVEN_CLOUD="/home/jmeixner/code/haven-cloud"
-source /home/jmeixner/code/haven-cloud/scripts/setup.sh
-export HAVEN_VERSION=dev
+# this is now taken out by default because I no longer work here
+# export HAVEN_CLOUD="/home/jmeixner/code/haven-cloud"
+# source /home/jmeixner/code/haven-cloud/scripts/setup.sh
+# export HAVEN_VERSION=dev
 
 
 ## needed this for some javafx configuration
