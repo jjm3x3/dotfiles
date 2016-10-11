@@ -21,5 +21,7 @@ alias emacs='emacs -nw'
 export PATH=$PATH:/home/jmeixner/.gem/ruby/2.3.0/bin
 
 #path manipulation for go
+#	uncomment this to use a specificly installed version of go
+# export GOROOT=/usr/local/go
 export GOPATH=~/goCode
-export PATH=$PATH:~/go/bin
+export PATH=:$GOROOT/bin:$GOPATH/bin:$PATH
