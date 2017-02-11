@@ -1,9 +1,10 @@
-#! /bin/bash
+#!/bin/bash
 
 # basic haven-cloud instalation
+# this is now taken out by default because I no longer work here
 # export HAVEN_CLOUD="/home/jmeixner/code/haven-cloud"
 # source /home/jmeixner/code/haven-cloud/scripts/setup.sh
-export HAVEN_VERSION=dev
+# export HAVEN_VERSION=dev
 
 
 ## needed this for some javafx configuration
@@ -29,10 +30,12 @@ alias cap='shutter -s -e -o "/home/jmeixner/Pictures/Screenshots/%y-%m-%d_$w_$h.
 export PATH=$PATH:/home/jmeixner/.gem/ruby/2.3.0/bin
 
 #path manipulation for go
-export GOPATH=~/code/goCode/
-export PATH=$PATH:$GOPATH/bin/
+# uncomment this to use a specificly installed version of go
+# export GOROOT=/usr/local/go
+export GOPATH=~/code/goCode
+export PATH=:$GOROOT/bin:$GOPATH/bin:$PATH
 
-
+# install rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
