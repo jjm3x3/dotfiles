@@ -92,6 +92,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 #
 # courtesy of FontAwesome. cheet sheet here http://fontawesome.io/cheatsheet/
+# in order to install it just get ahold of the *.ttf and put it [here](~/.fonts)
 set $workspace1 "1: Terminal "
 set $workspace2 "2: Firefox "
 set $workspace3 "3: Eclipse "
@@ -203,4 +204,6 @@ exec --no-startup-id discord
 exec --no-startup-id /home/jmeixner/scripts/twoScreens.sh
 
 bindsym $mod+shift+x exec i3lock
-exec_always feh --bg-scale /home/jmeixner/Pictures/Walpapers/5\ -\ SJD6XU5.jpg
+#
+# exec_always feh --bg-scale /home/jmeixner/Pictures/Walpapers/5\ -\ SJD6XU5.jpg
+exec feh --bg-scale /home/jmeixner/Pictures/6768666-1080p-wallpapers.jpg
