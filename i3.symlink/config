@@ -44,7 +44,7 @@ bindsym $mod+d exec dmenu_run
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
+#bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
@@ -196,14 +196,18 @@ for_window [class="Spotify"] move to workspace $workspace9
 
 exec --no-startup-id i3-msg $workspace1
 exec --no-startup-id firefox 
-exec --no-startup-id spotify
+# exec --no-startup-id spotify
 # exec eclipse
 exec --no-startup-id slack
-exec --no-startup-id discord
+# exec --no-startup-id discord
 
-exec --no-startup-id /home/jmeixner/scripts/twoScreens.sh
+# exec --no-startup-id /home/jmeixner/scripts/twoScreens.sh
 
-bindsym $mod+shift+x exec i3lock
+#bindsym $mod+shift+x exec i3lock
+bindsym $mod+l exec i3lock
 #
 # exec_always feh --bg-scale /home/jmeixner/Pictures/Walpapers/5\ -\ SJD6XU5.jpg
 exec feh --bg-scale /home/jmeixner/Pictures/6768666-1080p-wallpapers.jpg
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
