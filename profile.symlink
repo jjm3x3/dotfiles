@@ -11,6 +11,7 @@
 export XDG_DATA_DIRS=/usr/local/share:/usr/share
 
 ## classic git glog alias
+source ~/.dotfiles/git-completion.bash
 alias glog='git log --graph --pretty=oneline --decorate'
 alias g='git status'
 
