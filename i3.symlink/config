@@ -188,10 +188,11 @@ assign	[class="Steam"] $workspace8
 assign  [class="Spotify"] $workspace9
 
 assign 	[class="Spotify "] $workspace9
-assign 	[class="Discord"] $workspace10
+assign 	[class="discord"] $workspace10
 assign  [class="Slack"] $workspace10
 
 for_window [class="Spotify"] move to workspace $workspace9
+#for_window [class="Discord"] move to workspace $workspace10
 
 
 exec --no-startup-id i3-msg $workspace1
