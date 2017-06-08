@@ -5,6 +5,8 @@
 # ~/.profile is run on startup which will have all
 # bash agnostic shell configuration 
 
+echo "bashrc runs"
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -13,3 +15,8 @@ PS1='[\u@\h \W]\$ '
 
 ##
 source ~/.profile
+
+export NVM_DIR="/home/jmeixner/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

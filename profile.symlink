@@ -11,6 +11,7 @@
 export XDG_DATA_DIRS=/usr/local/share:/usr/share
 
 ## classic git glog alias
+source ~/.dotfiles/git-completion.bash
 alias glog='git log --graph --pretty=oneline --decorate'
 alias g='git status'
 
@@ -20,6 +21,14 @@ alias emacs='emacs -nw'
 
 # better grep serach
 alias igrep='grep -irn --color'
+
+# a short tearm fix for steam
+alias steam="./launchSteam.sh" 
+# this one is not used
+# alias steam='LD_PRELOAD="/usr/lib/libstdc++.so.6 /usr/lib32/libstdc++.so.6 /usr/lib/libgcc_s.so.1 /usr/lib32/libgcc_s.so.1" ~/.local/share/Steam/ubuntu12_32/steam-runtime/run.sh steam'
+
+# niceity for screan capture
+alias cap='shutter -s -e -o "/home/jmeixner/Pictures/Screenshots/%y-%m-%d_%T.png"'
 
 #path manipulation for ruby
 export PATH=$PATH:/home/jmeixner/.gem/ruby/2.3.0/bin
@@ -31,7 +40,7 @@ function loop() {
 
 #path manipulation for go
 #	uncomment this to use a specificly installed version of go
-export GOROOT=/usr/local/go
+#export GOROOT=/usr/local/go
 export GOPATH=~/code/goCode
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
@@ -55,11 +64,18 @@ if [ -d '/home/jmeixner/.dlv' ]; then
 	source '/home/jmeixner/.dlv/debugCommand.sh'
 fi
 
+# install rvm
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 if [ -f '/home/jmeixner/.mshn_rc' ]; then
 	source '/home/jmeixner/.mshn_rc'
 fi
+
 
 # helpful git :::: 
 ## force move a branch
 # 'git branch -f branch-name new-tip-commit'
 # sauce: http://stackoverflow.com/questions/5471174/git-move-branch-pointer-to-different-commit-without-checkout
+

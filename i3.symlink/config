@@ -16,6 +16,8 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono 8
+font pango:liberation Sans Mono 8
+font pango:System San Fransisco Display 10
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -42,7 +44,7 @@ bindsym $mod+d exec dmenu_run
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
+#bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
@@ -89,33 +91,38 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 #
-set $workspace1 "1: Terminal"
-set $workspace2 "2: Firefox"
-set $workspace3 "3: Eclipse"
-set $workspace10 "10: Slack"
+# courtesy of FontAwesome. cheet sheet here http://fontawesome.io/cheatsheet/
+# in order to install it just get ahold of the *.ttf and put it [here](~/.fonts)
+set $workspace1 "1: Terminal "
+set $workspace2 "2: Firefox "
+set $workspace3 "3: Eclipse "
+set $workspace4 "4: View "
+set $workspace8 "8: Games "
+set $workspace9 "9: Spotify "
+set $workspace10 "10: Social "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace 4
+bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # reload the configuration file
@@ -151,11 +158,25 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #0762D9 #074F73 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
 }
+
+# huh?! I want this to work because I don't think hard coding it will work
+set screen1 $(xrandr | grep DVI | grep -v discon | awk '{print $1}')
+
+workspace $workspace2 output DVI-0 #$screen1
+workspace $workspace1 output DVI-0 #$screen1
 
 for_window [class="bookKeeping"] floating enable
 
@@ -163,9 +184,31 @@ for_window [class="bookKeeping"] floating enable
 assign  [class="Firefox"] $workspace2
 assign  [class="Eclipse"] $workspace3
 assign  [class="Eclipse "] $workspace3
+assign	[class="Steam"] $workspace8
+assign  [class="Spotify"] $workspace9
+
+assign 	[class="Spotify "] $workspace9
+assign 	[class="discord"] $workspace10
 assign  [class="Slack"] $workspace10
 
-exec firefox 
-# exec eclipse
-exec slack
+for_window [class="Spotify"] move to workspace $workspace9
+#for_window [class="Discord"] move to workspace $workspace10
 
+
+exec --no-startup-id i3-msg $workspace1
+exec --no-startup-id firefox 
+# exec --no-startup-id spotify
+# exec eclipse
+exec --no-startup-id slack
+# exec --no-startup-id discord
+
+# exec --no-startup-id /home/jmeixner/scripts/twoScreens.sh
+
+#bindsym $mod+shift+x exec i3lock
+bindsym $mod+l exec i3lock
+#
+# exec_always feh --bg-scale /home/jmeixner/Pictures/Walpapers/5\ -\ SJD6XU5.jpg
+exec feh --bg-scale /home/jmeixner/Pictures/6768666-1080p-wallpapers.jpg
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show

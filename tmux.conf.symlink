@@ -1,3 +1,13 @@
- set -sg escape-time 0
+set -sg escape-time 0
 bind-key j command-prompt -p "join pane from:"  "join-pane -s '%%'"
 bind-key S command-prompt -p "send pane to:"  "join-pane -t '%%'"
+
+set-window-option -g mode-keys vi
+
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
+
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
