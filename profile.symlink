@@ -12,16 +12,25 @@ export XDG_DATA_DIRS=/usr/local/share:/usr/share
 
 ## classic git glog alias
 alias glog='git log --graph --pretty=oneline --decorate'
+alias g='git status'
 
 
 # I don't winowed emacs so much
 alias emacs='emacs -nw'
 
+# better grep serach
+alias igrep='grep -irn --color'
+
 #path manipulation for ruby
 export PATH=$PATH:/home/jmeixner/.gem/ruby/2.3.0/bin
 
+# 'command' to loop what ever function I may want to 
+function loop() {
+	while [ 1 ]; do clear; $@; sleep 1; done
+}
+
 #path manipulation for go
 #	uncomment this to use a specificly installed version of go
-# export GOROOT=/usr/local/go
+export GOROOT=/usr/local/go
 export GOPATH=~/code/goCode
 export PATH=:$GOROOT/bin:$GOPATH/bin:$PATH
