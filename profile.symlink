@@ -19,6 +19,9 @@ alias g='git status'
 # I don't winowed emacs so much
 alias emacs='emacs -nw'
 
+# better grep serach
+alias igrep='grep -irn --color'
+
 # a short tearm fix for steam
 alias steam="./launchSteam.sh" 
 # this one is not used
@@ -27,24 +30,62 @@ alias steam="./launchSteam.sh"
 # niceity for screan capture
 alias cap='shutter -s -e -o "/home/jmeixner/Pictures/Screenshots/%y-%m-%d_%T.png"'
 
-
 #path manipulation for ruby
 export PATH=$PATH:/home/jmeixner/.gem/ruby/2.3.0/bin
 
+# 'command' to loop what ever function I may want to 
+function loop() {
+	while [ 1 ]; do clear; $@; sleep 1; done
+}
+
 #path manipulation for go
-# uncomment this to use a specificly installed version of go
-# export GOROOT=/usr/local/go
+#	uncomment this to use a specificly installed version of go
+#export GOROOT=/usr/local/go
 export GOPATH=~/code/goCode
-export PATH=:$GOROOT/bin:$GOPATH/bin:$PATH
+export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /home/jmeixner/Downloads/google-cloud-sdk/path.bash.inc ]; then
+  source '/home/jmeixner/Downloads/google-cloud-sdk/path.bash.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /home/jmeixner/Downloads/google-cloud-sdk/completion.bash.inc ]; then
+  source '/home/jmeixner/Downloads/google-cloud-sdk/completion.bash.inc'
+fi
+
+
+export PATH=/usr/local/julia/bin:$PATH
+
+if [ -d '/home/jmeixner/.dlv' ]; then
+	source '/home/jmeixner/.dlv/debugCommand.sh'
+fi
 
 # install rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+# honestly don't remember why this exists
 export PATH="$PATH:$HOME/.local/bin"
 
 # neet idea but doesn't work like this
 # alias view=' result.html && firefox result.html && rm result.html'
 
+# need cargo for rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# for MSHN things
+if [ -f '/home/jmeixner/.mshn_rc' ]; then
+	source '/home/jmeixner/.mshn_rc'
+fi
+
+
+# helpful git :::: 
+## force move a branch
+# 'git branch -f branch-name new-tip-commit'
+# sauce: http://stackoverflow.com/questions/5471174/git-move-branch-pointer-to-different-commit-without-checkout
+
