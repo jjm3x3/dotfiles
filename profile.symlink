@@ -41,3 +41,10 @@ export PATH=:$GOROOT/bin:$GOPATH/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export PATH="$PATH:$HOME/.local/bin"
+
+# neet idea but doesn't work like this
+# alias view=' result.html && firefox result.html && rm result.html'
+
+export PATH="$HOME/.cargo/bin:$PATH"
