@@ -27,6 +27,7 @@ alias steam="./launchSteam.sh"
 # this one is not used
 # alias steam='LD_PRELOAD="/usr/lib/libstdc++.so.6 /usr/lib32/libstdc++.so.6 /usr/lib/libgcc_s.so.1 /usr/lib32/libgcc_s.so.1" ~/.local/share/Steam/ubuntu12_32/steam-runtime/run.sh steam'
 
+# I no longer use shutter I now use gnome-screenshopt
 # niceity for screan capture
 alias cap='shutter -s -e -o "/home/jmeixner/Pictures/Screenshots/%y-%m-%d_%T.png"'
 
