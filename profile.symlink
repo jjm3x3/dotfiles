@@ -91,4 +91,4 @@ fi
 # sauce: http://stackoverflow.com/questions/5471174/git-move-branch-pointer-to-different-commit-without-checkout
 
 # fix for nixnote
-alias nixnote='LD_PRELOAD=libcurl.so.3 nixnote'
+alias nixnote='LD_PRELOAD=libcurl.so.3 nixnote2'
